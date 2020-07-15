@@ -48,7 +48,7 @@ export function calculateXYInMetersOfPoint2(p1Lat, p1Lng, p2Lat, p2Lng, p1x, p1y
 * p2Lat: latitude for position 2
 * p2Lng: longitude for position 2
 */
-export calculateLatLngOfPoint2(p1Lat, p1Lng, p1x, p1y, p2x, p2y, angle) {
+export function calculateLatLngOfPoint2(p1Lat, p1Lng, p1x, p1y, p2x, p2y, angle) {
 	//convert meters to kilometers
 	p1x = p1x / 1000;
 	p1y = p1y / 1000;
@@ -86,7 +86,7 @@ export calculateLatLngOfPoint2(p1Lat, p1Lng, p1x, p1y, p2x, p2y, angle) {
 * x: new position of point 2 x, after applying the rotation
 * y: new position of point 2 y, after applying the rotation
 */
-export calculateXYOfPoint2(cx, cy, x, y, angle) {
+export function calculateXYOfPoint2(cx, cy, x, y, angle) {
 	let radians = (Math.PI / 180) * angle,
 		cos = Math.cos(radians),
 		sin = Math.sin(radians),
@@ -104,7 +104,7 @@ export calculateXYOfPoint2(cx, cy, x, y, angle) {
 * Output:
 * Rotation / angle in degrees
 */
-export calculateRotationBetweenTwoPoints(cx, cy, ex, ey) {
+export function calculateRotationBetweenTwoPoints(cx, cy, ex, ey) {
 	const dy = ey - cy;
 	const dx = ex - cx;
 	let theta = Math.atan2(dy, dx); // range (-PI, PI]
