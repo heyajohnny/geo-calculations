@@ -1,9 +1,12 @@
 {
 	"name": "geo-calculations",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Calculations for Geo oriented projects",
 	"license": "MIT",
-	"repository": "heyajohnny/geo-calculations",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/heyajohnny/geo-calculations.git"
+	},
 	"main": "index.js",
 	"keywords": [
 		"geo",
