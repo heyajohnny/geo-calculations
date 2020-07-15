@@ -11,7 +11,7 @@
 * p2x: x position in meters, relative to p1
 * p2y: y position in meters, relative to p1
 */
-function calculateDistanceInMetersBetweenTwoPoints(p1Lat, p1Lng, p2Lat, p2Lng, p1x, p1y, angle) {
+export function calculateDistanceInMetersBetweenTwoPoints(p1Lat, p1Lng, p2Lat, p2Lng, p1x, p1y, angle) {
 	//convert meters to kilometers
 	p1x = p1x / 1000;
 	p1y = p1y / 1000;
@@ -34,5 +34,3 @@ function calculateDistanceInMetersBetweenTwoPoints(p1Lat, p1Lng, p2Lat, p2Lng, p
 
 	return {x: p2x, y: p2y};
 }
-
-module.exports.calculateDistanceInMetersBetweenTwoPoints = calculateDistanceInMetersBetweenTwoPoints
