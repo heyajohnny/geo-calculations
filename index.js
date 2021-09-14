@@ -112,3 +112,27 @@ export function calculateRotationBetweenTwoPoints(cx, cy, ex, ey) {
 	if (theta < 0) theta = 360 + theta; // range [0, 360)
 	return theta;
 }
+
+/**
+ * Input:
+ * p1Lat: latitude for position 1
+ * p1Lng: longitude for position 1
+ * p1Lat: latitude for position 1
+ * p1Lng: longitude for position 1
+ * Output:
+ * Rotation / bearing in degrees
+ */
+export function calculateBearingBetweenTwoLatLngs(p1Lat, p1Lng, p2Lat, p2Lng) {
+	const diffLng = (p2Lng - p1Lng);
+	const y = Math.sin(diffLng) * Math.cos(p2Lat);
+	const x = Math.cos(p1Lat) * Math.sin(p2Lat) - Math.sin(p1Lat)
+		* Math.cos(p2Lat) * Math.cos(diffLng);
+
+	let bearing = Math.atan2(y, x);
+
+	bearing = bearing * (180/Math.PI);
+	bearing = (bearing + 360) % 360;
+	bearing = 360 - bearing; // count degrees counter-clockwise - remove to make clockwise
+
+	return bearing;
+}
